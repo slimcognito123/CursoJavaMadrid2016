@@ -49,3 +49,6 @@ function diasMesTotales(fecha){
         return 30;
     }
 }
+function vaciarFormulario(formulario){
+    alert(formulario)
+}
