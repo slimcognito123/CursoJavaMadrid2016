@@ -92,7 +92,7 @@ function calcularAnos(fecha){
     dias=new Date().getDate()-fecha.getDate();
     if(dias<0){
         meses--;
-        dias=diasMesTotales(fecha)-fecha.getDate()+new Date().getDate();
+        dias=diasMesTotales(fecha)-fecha.getDate()+new Date().getDate()+1;
         if(meses<0){
             anos--;
             meses=fecha.getMonth()+meses+1;
@@ -114,4 +114,22 @@ function cambiar(numero){
 function change(){
     muestraFecha=!muestraFecha;
     mostrarDatos();
+}
+function diasMesTotales(fecha){
+    var mes=fecha.getMonth()+1;
+    if(mes==1||mes==3||mes==5||mes==7||mes==8||mes==10||mes==12){
+        return 31
+    }else if(mes==2){
+        if(bisiesto(fecha.getFullYear())){
+            return 29
+        }else{
+            return 28
+        }
+    }else{
+        return 30;
+    }
+}
+function bisiesto(ano){
+    if(ano%400==0||ano%4==0&&ano%100!=0)return true;
+    else false;
 }
