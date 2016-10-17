@@ -1,0 +1,39 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+header{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color:#A1FFB2;
+}
+
+main{
+    width: 980px;
+    text-align: center;
+}
+article{
+    border: 1px solid #A9FFF7;
+    border-radius: 10px;
+    width: 40%;
+    font-size: 1.5em;
+}
+section{
+    text-align: left;
+}
+th{
+    background: #92E8A9;
+    border-collapse: collapse;
+    border: 1px solid green;
+    padding: 10px;
+    text-align: center;
+}
+table{
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+caption{
+    font-size: 1.5em;
+    color:green;
+}
