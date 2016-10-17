@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>calcular edad</title>
+		<script type="text/javascript">
+			function calcular(){
+				alert(document.getElementById("dia").value);
+				var dia=document.getElementsByName('dia')[0].value;
+				var mes=document.getElementsByName('mes')[0].value;
+				var ano=document.getElementsByName('ano')[0].value;
+
+				alert(dia+"/"+mes+"/"+ano)
+				if (dia==null||mes==null||ano==null) {
+					alert("rellena los campos")
+				} else {
+					var fechaNac=new Date(mes+"/"+dia+"/"+ano)
+					alert(fechaNac)
+				}
+
+			}
+		</script>
+	</head>
+	<body>
+		<div>introduce tu fecha de nacimiento:</div>
+		<form>
+			<input type="number" id="dia" name="dia" placeholder="dia">
+			<input type="number" name="mes" placeholder="mes">
+			<input type="number" name="ano" placeholder="a&ntilde;o completo">
+			<input type="button" name="" onclick="calcular();" value="comprobar">
+		</form>
+		<div id="edad"></div>
+	</body>
+</html>
