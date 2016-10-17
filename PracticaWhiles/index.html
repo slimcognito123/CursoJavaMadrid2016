@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>gesti&oacute;n de usuarios</title>
+		<meta charset="utf-8">
+		<script src="script.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Empresa sin nombre</h1>
+		</header>
+		<main>
+			<article>
+				<section>
+					<form action="nada.php" method="post" nombre="formulario">
+						nombre: <input type="text" name="nombre" placeholder="nombre" required><br/>
+						apellidos: <input type="text" name="apellidos" placeholder="apellidos" required><br/>
+						fecha de nacimiento: <input type="date" name="nacimiento" placeholder="dd/mm/YYYY" required><br/>
+						nombre de usuario: <input type="text" name="user" placeholder="usuario" required><br/>
+						correo:<input type="email" name="emilio" value="" placeholder="">
+						contraseña:<input type="password" name="pass" value="" placeholder="contraseña">
+						verifica contraseña: <input type="password" name="pass2" value="" placeholder="contraseña">
+						<input type="button" name="botonaco" value="Cancelar" onclick="vaciarFormulario(formulario);">
+						<input type="button" name="botonaco" value="Enviar" onclick="enviarFormulario(formulario);">
+					</form>
+				</section>
+				<section>
+					<table>
+						<caption>usuarios inscritos</caption>
+						<tr>
+							<th>usuario</th>
+							<th>Nombre</th>
+							<th>Edad</th>
+							<th>Correo</th>
+							<th colspan="2">Opciones</th>
+						</tr>
+					</table>
+				</section>
+			</article>
+		</main>
+	</body>
+</html>
