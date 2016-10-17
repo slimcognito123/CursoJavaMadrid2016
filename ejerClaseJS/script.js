@@ -6,14 +6,7 @@ function main(){
     Datos=new detalles();
     muestraDatos=3
     muestraFecha=false;
-    /*alert(typeof new Date().getFullYear());
-    var anos=new Date().getFullYear()-new Date("11/23/2005").getFullYear();
-    var meses=new Date().getMonth()-new Date("11/23/2005").getMonth();
-    if(meses<0){
-        anos--;
-        meses=new Date("11/23/2005").getMonth()+meses+1;
-    }
-    alert(anos+"  "+meses)*/
+
 }
 function detalles(){
     this.nombre="";
