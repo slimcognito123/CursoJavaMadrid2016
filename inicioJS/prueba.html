@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script>
+			alert("hola");
+		</script>
+	</head>
+	<body>
+		<h1>Mi primera pagina con javascript</h1>
+		<p>JavaScript puede cambiar el contenido de un elemeto HTML</p>
+		<button type="button" onclick="myFunction()">Clickeame!</button>
+		<p id="demo">Esto es solo una demostracion</p>
+		<script>
+			function myFunction() {
+				document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+			}
+			function myFunction2() {
+				var x = document.getElementById("demo2");
+				x.style.fontSize = "25px";
+				x.style.color = "red";
+			}
+			function myFunction3() {
+				var text;
+				var x = document.getElementById("numeroIntroducido").value
+				if (isNaN(x) || x < 1 || x > 10) {
+					text = "Entrada no válida"
+				} else {
+					text = "OK"
+				}
+			document.getElementById("demo3").innerHTML = text
+			}
+			//document.getElementById("idp").innerHTML="holiwiiiiiiis";
+			console.log("he cargao")
+			var x=2+2;
+			y=x*27
+			document.write(y)
+			//alert(1==true);
+			var john=new Object();
+			john.nombre="John";
+			john.apellidos="Connor";
+			john.edad=50;
+			john.colorDeOjos="blue";
+			john.nombreCompleto=function(){
+				return this.nombre+" "+this.apellidos;
+			}
+			var xxx=new Number(5);
+			var yyy=new Object(xxx);
+			yyy++;
+			console.log(yyy)
+		</script>
+		<p id="demo2">JavaScript puede cambiar el estilo de un elemento HTML</p>
+		<button type="button" onclick="myFunction2()">Clickeame!</button>
+		<p>Introduce un numero entre 1 y 10</p>
+		<input id="numeroIntroducido" type="number">
+		<button type="button" onclick="myFunction3()">Submit</button>
+		<p id="demo3"></p>
+		<p id="idp"></p>
+	</body>
+</html>

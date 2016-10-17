@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+	    <meta charset="utf-8">
+	    <title>informacion</title>
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	    <script src="script.js" type="text/javascript"></script>
+	</head>
+
+	<body onload="main();">
+		<header>
+			<h1>Registro personal</h1>
+		</header>
+		<main>
+			<article>
+				<section>
+					<form action="cogerDatos.php" method="post">
+						nombre: <input type="text" name="nombre" placeholder="nombre" required><br/>
+						apellidos: <input type="text" name="apellidos" placeholder="apellidos" required><br/>
+						fecha de nacimiento: <input type="date" name="nacimiento" placeholder="dd/mm/YYYY" required><br/>
+						ultimo dia de estudios: <input type="date" name="estudios" placeholder="dd/mm/YYYY" required="required"><br/>
+						obtencion carnet conducir: <input type="date" name="conducir" placeholder="dd/mm/YYYY" required><br/>
+						<input type="button" name="botonaco" value="comprobar y enviar" onclick="enviarDatos();">
+					</form>
+				</section>
+			</article>
+			<article>
+				<section>
+					<form>
+						cambiar estilo de fechas<br/>
+						<input type="button" value="cambiar" onclick="change()">
+					</form>
+					<form>
+						cambiar nivel de detalles<br/>
+						<input type="button" value="dias" onclick="cambiar(1)">
+						<input type="button" value="meses" onclick="cambiar(2)">
+						<input type="button" value="a&ntilde;os" onclick="cambiar(3)">
+					</form>
+				</section>
+				<section>
+					<table>
+						<caption>datos del ultimo usuario</caption>
+						<tr>
+							<td>nombre</td>
+							<td id="nombre">??????</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>apellidos</td>
+							<td id="apellido1">???????</td>
+							<td id="apellido2">???????</td>
+						</tr>
+						<tr>
+							<td>fecha nacimiento y edad</td>
+							<td id="fNaci">??/??/????</td>
+							<td id="edad">??</td>
+						</tr>
+						<tr>
+							<td>fecha de carnet de conducir y años conduciendo</td>
+							<td id="fCondu">??/??/????</td>
+							<td id="aCondu">??</td>
+						</tr>
+						<tr>
+							<td>final de estudios y tiempo desde entonces</td>
+							<td id="fEstudios">??/??/????</td>
+							<td id="aEstudios">??</td>
+						</tr>
+					</table>
+				</section>
+			</article>
+			<article>
+				<section id="listaPersonas">
+					primero de la lista: ????? <br>
+					ultimo de la lista: ????? <br>
+				</section>
+				<div>
+					<input type="button" value="borrar ultimo" onclick="borrarUltimo();">
+				</div>
+			</article>
+		</main>
+	</body>
+</html>

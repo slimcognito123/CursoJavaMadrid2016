@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <script>
+            function main(){
+                var cosa=new Array();
+                for(var i=0; i<3;i++){
+                    cosa[i]=prompt("escribe algo");
+                }
+                var otraCosa=new Array();
+                for(var i=0; i<3;i++){
+                    otraCosa[i]=prompt("escribe algo");
+                }
+                document.getElementById("demo").innerHTML="<br/>longitud:"+cosa.length+"<br/>concatenacion:"+
+                    cosa.concat(otraCosa)+"<br/>posicion de la palabra 'patata':"+cosa.indexOf("patata")+"<br/>union del array:"+
+                    cosa.join(otraCosa)+"<br/>posicion de la palabra 'patata' desde atras:"+cosa.concat(otraCosa).lastIndexOf("patata");
+                document.getElementById("demo2").innerHTML="nuevo 'cosa':";
+                cosa.pop();
+                cosa.push("holiwiiiiis777");
+                for(var i=0;i<3;i++){
+                    document.getElementById("demo2").innerHTML+=cosa[i]+" ";
+                }
+                var cosa2=cosa.concat(otraCosa);
+                cosa2=cosa2.reverse();
+                document.getElementById("demo2").innerHTML+="<br/>cadena invertida completa:"
+                for(var i=0;i<6;i++){
+                    document.getElementById("demo2").innerHTML+=cosa2[i]+" ";
+                }
+                document.getElementById("demo2").innerHTML+="<br/>elemento eliminado:"+cosa2.shift();
+                document.getElementById("demo2").innerHTML+="<br/>trozo del array:"+cosa2.slice(3);
+                document.getElementById("demo2").innerHTML+="<br/>array ordenador:"+cosa2.sort();
+            }
+
+        </script>
+    </head>
+
+    <body onload="main();">
+        <div id="demo"></div>
+        <div id="demo2"></div>
+    </body>
+
+</html>

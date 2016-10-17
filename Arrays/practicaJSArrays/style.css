@@ -1,0 +1,46 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+header{
+    text-align: center;
+    color: aquamarine;
+}
+body{
+    background: grey;
+}
+main{
+    min-height: 500px;
+    /*background: red;*/
+    padding-left: 100px;
+}
+article{
+    border: 1px solid lightblue;
+    border-collapse: collapse;
+    border-radius: 13px;
+    float: left;
+    margin: 0 1%;
+    font-size: 1.5em;
+}
+section{
+    border: 1px dashed grey;
+    border-radius: 13px;
+}
+article:nth-child(even){
+    background: #ECFFEB;
+}
+article:nth-child(odd){
+    background: white;
+}
+td, table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#listaPersonas{
+    clear: left;
+    width: 900px;
+    min-height: 200px;
+    font-size: 1.5em;
+    text-align: center;
+    background: none;
+}
