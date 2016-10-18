@@ -54,6 +54,7 @@ function diasMesTotales(fecha){
 }
 function enviarFormulario(){
     var valido=true
+    verError.innerHTML="";
     for(var i=0;i<6;i++){
         validar(i);
         if(introductor!=-1)valido=false;
@@ -119,8 +120,13 @@ function validar(numero){
             }
             break;
         case 5:
-            if(document.getElementsByName('pass')[0].value==document.getElementsByName('pass2')[0].value)
-                introductor=-1;
+            if(document.getElementsByName('pass')[0].value==document.getElementsByName('pass2')[0].value){
+                if(document.getElementsByName('pass')[0].value.length>6)introductor=-1;
+                else{
+                    introductor=5;
+                    verError.innerHTML+="la contrase&ntilde;a es demasiado peque&ntildea;<br/>"
+                }
+            }
             else{
                 introductor=5;
                 verError.innerHTML+="las contrase&ntilde;as no concuerdan<br/>"
@@ -140,7 +146,6 @@ function comprobarEnLista(tipo,string){
             }
         }
     }
-    if(lista.length>0)
     return true;
 }
 function introducirEnArray(user){
