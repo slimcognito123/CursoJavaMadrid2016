@@ -1,7 +1,7 @@
 var user //Usuario
 var lista //Array
 var verError; //id del error
-var puntero; //apuntador para modificar
+var puntero=null; //apuntador para modificar
 var introductor=-1;//es valido o no
 function main(){
     verError=document.getElementById('mensajeError');
@@ -133,6 +133,9 @@ function validar(numero){
 function comprobarEnLista(tipo,string){
     if(lista!=null){
         for(var j=0;j<lista.length&&lista.length>0;j++){
+            if(puntero!=null){
+                if(j==puntero)continue;
+            }
             if(!tipo){
                 if(lista[j].usuario==string)return false;
             }else{
@@ -194,6 +197,7 @@ function cambiar(){
         cambiarEnArray(user,puntero);
         cargarListaEnTabla();
     }
+    puntero=null;
 }
 function cambiarEnArray(usuario,puntero){
     lista[this.puntero]=usuario;
