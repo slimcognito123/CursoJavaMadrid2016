@@ -4,6 +4,7 @@ var verError; //id del error
 var introductor=-1;//es valido o no
 function main(){
     verError=document.getElementById('mensajeError');
+    lista=new Array();
 }
 function Usuario(nombre, apellidos, usuario, emilio, fechaNacimiento, password){
     this.nombre=nombre;
@@ -51,7 +52,7 @@ function diasMesTotales(fecha){
     }
 }
 function enviarFormulario(){
-    for(var i=0;i<4&&introductor==-1;i++){
+    for(var i=0;i<6/*&&introductor==-1*/;i++){
         validar(i);
     }
     if(introductor==-1){
@@ -62,6 +63,11 @@ function enviarFormulario(){
                       document.getElementsByName('nacimiento')[0].value,
                       document.getElementsByName('pass')[0].value);
         vaciarFormulario();
+        introducirEnArray(user);
+        for(var j=0;j<lista.length;j++){
+            alert(lista[j].nombre);
+        }
+        cargarListaEnTabla();
     }
 
 }
@@ -80,7 +86,7 @@ function validar(numero){
             if(document.getElementsByName('nombre')[0].value.trim().length>=2) introductor=-1;
             else{
                 introductor=1;
-                verError.innerHTML+="nombre mal introducido<br/>"
+                verError.innerHTML="nombre mal introducido<br/>"
             }
             break;
         case 1:
@@ -106,7 +112,7 @@ function validar(numero){
             }
             break;
         case 4:
-            if(new RegExp("\W{3,}@[a-z|A-Z]+[.][a-z|A-Z]{2,3}").test(document.getElementsByName('emilio')[0].value)&&comprobarEnLista(true,document.getElementsByName('emilio')[0].value)) introductor=-1;
+            if(/^\w{3,}@[a-z|A-Z]{3,}[.][a-z|A-Z]{2,3}$/.test(document.getElementsByName('emilio')[0].value)&&comprobarEnLista(true,document.getElementsByName('emilio')[0].value)) introductor=-1;
             else{
                 introductor=5;
                 verError.innerHTML+="correo ya existente o no valido<br/>"
@@ -123,10 +129,31 @@ function validar(numero){
 }
 function comprobarEnLista(tipo,string){
     if(lista!=null){
-        for(var j=0;j<lista.length();j++){
-            if(!tipo)if(lista[i].usuario.value==string)return false;
-            else if(lista[i].emilio==string) return false;
+        for(var j=0;j<lista.length&&lista.length>0;j++){
+            if(!tipo){
+                if(lista[j].usuario==string)return false;
+            }else{
+                if(lista[j].emilio==string) return false;
+            }
         }
     }
+    if(lista.length>0)
+    alert("oliwis"+lista[j-1].emilio+" comparado con: "+string);
     return true;
+}
+function introducirEnArray(user){
+    lista.push(this.user);
+    user=new Usuario();
+}
+function cargarListaEnTabla(){
+    var meter=document.getElementById('introducirAqui')
+    meter.innerHTML="";
+    for(var k=0;k<lista.length&&lista!=null;k++){
+        meter.innerHTML+="<tr><td>"+lista[k].usuario+"</td><td>"+lista[k].nombre+"</td><td>"+calcularAnos(new Date(lista[k].fechaNacimiento))+'</td><td>'+lista[k].emilio+'</td><td><input type="button" name="" value="borrar" onclick="eliminar('+k+')"></td><td><input type="button" name="" value="modificar" onclick="modificar()"></td></tr>';
+    }
+}
+function eliminar(intPosicion){
+    if(intPosicion==0)  lista.shift();
+    else lista.splice(intPosicion,intPosicion);
+    cargarListaEnTabla();
 }
