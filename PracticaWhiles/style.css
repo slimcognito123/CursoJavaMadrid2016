@@ -43,3 +43,10 @@ caption{
 #secundario{
     display: none;
 }
+td:nth-child(even){
+    background-color: #96FF94;
+}
+td{
+    border: 1px solid black;
+    padding: 5px;
+}

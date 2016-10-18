@@ -54,7 +54,7 @@ function diasMesTotales(fecha){
 }
 function enviarFormulario(){
     var valido=true
-    for(var i=0;i<6/*&&introductor==-1*/;i++){
+    for(var i=0;i<6;i++){
         validar(i);
         if(introductor!=-1)valido=false;
     }
@@ -67,9 +67,6 @@ function enviarFormulario(){
                       document.getElementsByName('pass')[0].value);
         vaciarFormulario();
         introducirEnArray(user);
-        for(var j=0;j<lista.length;j++){
-            alert(lista[j].nombre);
-        }
         cargarListaEnTabla();
     }
 
@@ -144,7 +141,6 @@ function comprobarEnLista(tipo,string){
         }
     }
     if(lista.length>0)
-    alert("oliwis"+lista[j-1].emilio+" comparado con: "+string);
     return true;
 }
 function introducirEnArray(user){
