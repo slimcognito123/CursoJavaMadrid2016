@@ -13,16 +13,19 @@
 		<main>
 			<article>
 				<section>
+					<div id="mensajeError">
+
+					</div>
 					<form action="nada.php" method="post" nombre="formulario">
-						nombre: <input type="text" name="nombre" placeholder="nombre" required><br/>
-						apellidos: <input type="text" name="apellidos" placeholder="apellidos" required><br/>
-						fecha de nacimiento: <input type="date" name="nacimiento" placeholder="dd/mm/YYYY" required><br/>
-						nombre de usuario: <input type="text" name="user" placeholder="usuario" required><br/>
-						correo:<input type="email" name="emilio" value="" placeholder=""><br/>
-						contraseña:<input type="password" name="pass" value="" placeholder="contraseña"><br/>
-						verifica contraseña: <input type="password" name="pass2" value="" placeholder="contraseña"><br/>
-						<input type="button" name="botonaco" value="Cancelar" onclick="vaciarFormulario(this.formulario);">
-						<input type="button" name="botonaco" value="Enviar" onclick="enviarFormulario(formulario);">
+						nombre: <input type="text" name="nombre" placeholder="nombre" onblur="validar(0);" required><br/>
+						apellidos: <input type="text" name="apellidos" placeholder="apellidos" onblur="validar(1);" required><br/>
+						fecha de nacimiento: <input type="date" name="nacimiento" placeholder="dd/mm/YYYY" onblur="validar(2);" required><br/>
+						nombre de usuario: <input type="text" name="user" placeholder="usuario" onblur="validar(3);" required><br/>
+						correo:<input type="email" name="emilio" value="" placeholder="" onblur="validar(4);" required><br/>
+						contraseña:<input type="password" name="pass" value="" placeholder="contraseña" required><br/>
+						verifica contraseña: <input type="password" name="pass2" value="" placeholder="contraseña" required><br/>
+						<input type="button" name="botonaco" value="Cancelar" onclick="vaciarFormulario();">
+						<input type="button" name="botonaco" value="Enviar" onclick="enviarFormulario();">
 					</form>
 				</section>
 			</article>
