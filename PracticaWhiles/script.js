@@ -1,6 +1,10 @@
 var user //Usuario
 var lista //Array
-var aceptable=-1;//introductor
+var verError; //id del error
+var introductor=-1;//es valido o no
+function main(){
+    verError=document.getElementById('mensajeError');
+}
 function Usuario(nombre, apellidos, usuario, emilio, fechaNacimiento, password){
     this.nombre=nombre;
     this.apellidos=apellidos;
@@ -29,13 +33,7 @@ function calcularAnos(fecha){
             restador=true;
         }
     }
-    if(muestraDatos==3){
-        return "a&ntilde;os: "+anos;
-    }else if(muestraDatos==2){
-        return "a&ntilde;os: "+anos+" meses: "+meses;
-    }else{
-        return "a&ntilde;os: "+anos+" meses: "+meses+"dias: "+dias;
-    }
+    return anos;
 }
 function diasMesTotales(fecha){
     var mes=fecha.getMonth()+1;
@@ -77,18 +75,16 @@ function vaciarFormulario(){
     document.getElementsByName('pass2')[0].value="";
 }
 function validar(numero){
-    document.getElementById('mensajeError').innerHTML="";
-    var verError=document.getElementById('mensajeError');
     switch(numero){
         case 0:
-            if(document.getElementsByName('nombre')[0].value.trim().length()>=2) introductor=-1;
+            if(document.getElementsByName('nombre')[0].value.trim().length>=2) introductor=-1;
             else{
                 introductor=1;
                 verError.innerHTML+="nombre mal introducido<br/>"
             }
             break;
         case 1:
-             if(document.getElementsByName('apellidos')[0].value) introductor=-1
+             if(document.getElementsByName('apellidos')[0].value.trim().length>=2) introductor=-1
              else{
                  introductor=2;
                  verError.innerHTML+="apellido mal introducido<br/>"
@@ -110,10 +106,10 @@ function validar(numero){
             }
             break;
         case 4:
-            if(comprobarEnLista(true,document.getElementsByName('emilio')[0].value)) introductor=-1;
+            if(new RegExp("\W{3,}@[a-z|A-Z]+[.][a-z|A-Z]{2,3}").test(document.getElementsByName('emilio')[0].value)&&comprobarEnLista(true,document.getElementsByName('emilio')[0].value)) introductor=-1;
             else{
                 introductor=5;
-                verError.innerHTML+="correo ya existente<br/>"
+                verError.innerHTML+="correo ya existente o no valido<br/>"
             }
             break;
         case 5:

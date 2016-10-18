@@ -6,7 +6,7 @@
 		<script src="script.js" type="text/javascript"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body>
+	<body onload="main();">
 		<header>
 			<h1>Empresa sin nombre</h1>
 		</header>
@@ -17,11 +17,15 @@
 
 					</div>
 					<form action="nada.php" method="post" nombre="formulario">
-						nombre: <input type="text" name="nombre" placeholder="nombre" onblur="validar(0);" required><br/>
-						apellidos: <input type="text" name="apellidos" placeholder="apellidos" onblur="validar(1);" required><br/>
-						fecha de nacimiento: <input type="date" name="nacimiento" placeholder="dd/mm/YYYY" onblur="validar(2);" required><br/>
-						nombre de usuario: <input type="text" name="user" placeholder="usuario" onblur="validar(3);" required><br/>
-						correo:<input type="email" name="emilio" value="" placeholder="" onblur="validar(4);" required><br/>
+						nombre: <input type="text" name="nombre" placeholder="nombre" onblur="
+    document.getElementById('mensajeError').innerHTML='';validar(0);" required><br/>
+						apellidos: <input type="text" name="apellidos" placeholder="apellidos" onblur="
+    document.getElementById('mensajeError').innerHTML='';validar(1);" required><br/>
+						fecha de nacimiento: <input type="date" name="nacimiento" placeholder="dd/mm/YYYY" onblur="document.getElementById('mensajeError').innerHTML='';validar(2);" required><br/>
+						nombre de usuario: <input type="text" name="user" placeholder="usuario" onblur="
+    document.getElementById('mensajeError').innerHTML='';validar(3);" required><br/>
+						correo:<input type="email" name="emilio" value="" placeholder="" onblur="
+    document.getElementById('mensajeError').innerHTML='';validar(4);" required><br/>
 						contraseña:<input type="password" name="pass" value="" placeholder="contraseña" required><br/>
 						verifica contraseña: <input type="password" name="pass2" value="" placeholder="contraseña" required><br/>
 						<input type="button" name="botonaco" value="Cancelar" onclick="vaciarFormulario();">

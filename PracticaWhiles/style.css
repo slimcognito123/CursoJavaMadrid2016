@@ -37,3 +37,6 @@ caption{
     font-size: 1.5em;
     color:green;
 }
+#mensajeError{
+    color: red;
+}
