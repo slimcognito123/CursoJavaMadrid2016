@@ -1,6 +1,7 @@
 var user //Usuario
 var lista //Array
 var verError; //id del error
+var puntero; //apuntador para modificar
 var introductor=-1;//es valido o no
 function main(){
     verError=document.getElementById('mensajeError');
@@ -52,10 +53,12 @@ function diasMesTotales(fecha){
     }
 }
 function enviarFormulario(){
+    var valido=true
     for(var i=0;i<6/*&&introductor==-1*/;i++){
         validar(i);
+        if(introductor!=-1)valido=false;
     }
-    if(introductor==-1){
+    if(valido){
         user = new Usuario(document.getElementsByName('nombre')[0].value,
                        document.getElementsByName('apellidos')[0].value,
                       document.getElementsByName('user')[0].value,
@@ -149,11 +152,50 @@ function cargarListaEnTabla(){
     var meter=document.getElementById('introducirAqui')
     meter.innerHTML="";
     for(var k=0;k<lista.length&&lista!=null;k++){
-        meter.innerHTML+="<tr><td>"+lista[k].usuario+"</td><td>"+lista[k].nombre+"</td><td>"+calcularAnos(new Date(lista[k].fechaNacimiento))+'</td><td>'+lista[k].emilio+'</td><td><input type="button" name="" value="borrar" onclick="eliminar('+k+')"></td><td><input type="button" name="" value="modificar" onclick="modificar()"></td></tr>';
+        meter.innerHTML+="<tr><td>"+lista[k].usuario+"</td><td>"+lista[k].nombre+"</td><td>"+calcularAnos(new Date(lista[k].fechaNacimiento))+'</td><td>'+lista[k].emilio+'</td><td><input type="button" name="" value="borrar" onclick="eliminar('+k+')"></td><td><input type="button" name="" value="modificar" onclick="modificar('+k+')"></td></tr>';
     }
 }
 function eliminar(intPosicion){
     if(intPosicion==0)  lista.shift();
     else lista.splice(intPosicion,intPosicion);
     cargarListaEnTabla();
+}
+function modificar(intPosicion){
+    document.getElementsByName('nombre')[0].value=lista[intPosicion].nombre;
+    document.getElementsByName('apellidos')[0].value=lista[intPosicion].apellidos;
+    document.getElementsByName('nacimiento')[0].value=lista[intPosicion].fechaNacimiento;
+    document.getElementsByName('user')[0].value=lista[intPosicion].usuario;
+    document.getElementsByName('emilio')[0].value=lista[intPosicion].emilio;
+    document.getElementsByName('pass')[0].value=lista[intPosicion].password;
+    document.getElementsByName('pass2')[0].value=lista[intPosicion].password;
+    document.getElementsByName('botonaco')[0].style.display = 'none';
+    document.getElementsByName('botonaco')[1].style.display = 'none';
+    document.getElementsByName('botonsecundario')[0].style.display = 'block';
+
+    puntero=intPosicion;
+}
+function cambiar(){
+    var valido=true
+    for(var i=0;i<6;i++){
+        validar(i);
+        if(introductor!=-1)valido=false;
+    }
+    if(valido){
+        user = new Usuario(document.getElementsByName('nombre')[0].value,
+                       document.getElementsByName('apellidos')[0].value,
+                      document.getElementsByName('user')[0].value,
+                      document.getElementsByName('emilio')[0].value,
+                      document.getElementsByName('nacimiento')[0].value,
+                      document.getElementsByName('pass')[0].value);
+        vaciarFormulario();
+        document.getElementsByName('botonaco')[0].style.display = 'inline-block';
+        document.getElementsByName('botonaco')[1].style.display = 'inline-block';
+        document.getElementsByName('botonsecundario')[0].style.display = 'none';
+        cambiarEnArray(user,puntero);
+        cargarListaEnTabla();
+    }
+}
+function cambiarEnArray(usuario,puntero){
+    lista[this.puntero]=usuario;
+    user=new Usuario();
 }

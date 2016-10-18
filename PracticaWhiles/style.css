@@ -40,3 +40,6 @@ caption{
 #mensajeError{
     color: red;
 }
+#secundario{
+    display: none;
+}
