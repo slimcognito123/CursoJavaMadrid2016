@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+	function algo(){
+		ventanicaNueva=window.open("http://www.guguel.com", "ventanicaNueva" );
+	}
+	function algo2(){
+		ventanicaNueva.close();
+	}
+	function confirm(){
+		if(confirm("te piras?")) close();
+		else alert("holiii");
+	}
+	</script>
+</head>
+<body>
+<input type="button" value="abrir" onclick="algo()"></input>
+<input type="button" value="cerrar" onclick="algo2()"></input>
+<input type="button" value="cerrar" onclick="confirm()"></input>
+</body>
+</html>
+<html>
+<body>
+<p>Abre una nueva ventana y aumenta su tamaño de forma relativa 250 pixeles de ancho y alto cada vez que se pulsa el boton</p>
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="resizeWin()">Move "myWindow"</button>
+<script>
+var myWindow;
+function openWin() {
+myWindow = window.open("", "myWindow", "width=200, height=100");
+myWindow.document.write("<p>This is 'myWindow'</p>");
+}
+function resizeWin() {
+myWindow.resizeBy(250, 250); //probar tambien con resizeTo(250,250)
+myWindow.focus();
+}
+</script>
+</body>
+</html>
