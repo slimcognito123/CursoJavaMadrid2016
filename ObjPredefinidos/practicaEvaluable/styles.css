@@ -89,3 +89,6 @@ body{
 #explicacion strong{
     color: red;
 }
+main{
+    display: none;
+}

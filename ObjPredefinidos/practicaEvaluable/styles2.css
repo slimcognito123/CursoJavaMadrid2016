@@ -1,0 +1,33 @@
+*{
+    margin: 0 auto;
+    padding: 0px;
+}
+header{
+    text-align: center;
+    font-size: 5em;
+    right: 400px;
+}
+header>img{
+    position: relative;
+    height: 150px;
+    width: auto;
+    top: 25px;
+}
+header>input{
+    position: relative;
+    left: 100px;
+    padding: 1%;
+    border-radius: 3px;
+    font-size: 0.3em;
+}
+main{
+    text-align: center;
+}
+article>form>input{
+    font-size: 2em;
+    margin: 10px 0px;
+    padding: 1.5% 3%;
+}
+#muestraReloj{
+    font-size: 7em;
+}
