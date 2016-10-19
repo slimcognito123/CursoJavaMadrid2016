@@ -2,6 +2,90 @@
     margin: 0 auto;
     padding: 0px;
 }
+body{
+    background: linear-gradient(to left, #FFF, grey);
+}
 #tomateRodando{
     position: absolute;
+    animation: rodarDerecha 3s linear;
+    top: 180px;
+    left: 150px;
+}
+#letrasPomodoro{
+    position:relative;
+    top: 240px;
+    left: 480px;
+    animation: aparecer 4s linear;
+    z-index: 2;
+    font-size: 7.5em;
+    text-shadow: -5px 2px grey;
+    visibility: visible;
+}
+#presentacion>input{
+    animation: aparecer 5s linear;
+    position:absolute;
+    top: 420px;
+    left: 550px;
+    font-size: 3em;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: -5px 2px grey;
+}
+@keyframes rodarDerecha{
+    0%{
+        top: 0px;
+        left:0px;
+        width: 200px;
+        height: auto;
+    }
+    50%{
+        transform: rotate(180deg);
+        transition: transform 1s ease-out;
+        top:0%;
+        left: 600px;
+        width: 200px;
+        height: auto;
+    }
+    75%{
+        transform: rotate(-90deg);
+        transition: transform 1s ease-out;
+        left: 200px;
+        top: 150px;
+        width: 200px;
+        height: auto;
+    }
+    100%{
+        transform: rotate(0deg);
+        transition: transform 1s ease-out;
+        top: 180px;
+        left: 150px;
+        width: 300px;
+        height: auto;
+    }
+}
+@keyframes aparecer{
+    0%{
+        visibility: hidden;
+    }
+    75%{
+        visibility: hidden;
+    }
+    90%{
+        visibility: 70%;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+#explicacion{
+    text-align: center;
+    position:relative;
+    top: 460px;
+    color:darkblue;
+    animation: aparecer 5s linear;
+    font-size: 2.5em;
+    visibility: visible;
+}
+#explicacion strong{
+    color: red;
 }
