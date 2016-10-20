@@ -5,10 +5,10 @@ var minutos;
 var segundos;
 var sonar = true;
 var intervaloReloj;
-var continuar = true;
+var continuar=1;
 var tarea;
 var alday = [];
-
+var tareaActiva=null;
 function main() {
     document.getElementsByName("botonInicio")[0].onclick = entrarEnPagina;
     document.getElementsByName("settings")[0].onclick = viewSettings;
@@ -92,8 +92,9 @@ function comprobarTask() {
     }
 }
 function createTask(){
-    tarea=new Task(document.getElementsByName("task")[0].value.trim(),document.getElementsByName("numPomo")[0].value);
+    tarea=new task(document.getElementsByName("task")[0].value.trim(),document.getElementsByName("numPomo")[0].value);
     introducirAlday(tarea);
+    tarea=null;
     visualizarAlday();
 }
 function introducirAlday(task){
@@ -106,11 +107,11 @@ function pomodoroSettings(tiempoPomodoro, pausaCorta, pausaLarga, song) {
     this.musica = song;
 }
 
-function task(name, numPeriods) {
+function task(name, numPeriods){
     this.name = name;
     this.numPeriods = numPeriods;
     this.realPeriods = 0;
-    this.state="pending";
+    this.state="pending";//pending unfinish finished
 }
 
 function cambiarMinutos() {
@@ -127,6 +128,13 @@ function visualizar() {
     else temporizador.innerHTML = minutos;
     if (segundos.toString().length < 2) temporizador.innerHTML += ":0" + segundos;
     else temporizador.innerHTML += ":" + segundos;
+}
+
+function visualizarAlday(){
+    document.getElementById("estoPaLasTareas").innerHTML="";
+    for(var i=0; i<alday.length;i++){
+        document.getElementById("estoPaLasTareas").innerHTML+="<tr><td>"+alday[i].name+"</td><td>"+alday[i].numPeriods+"</td><td>"+alday[i].realPeriods+"</td><td>"+alday[i].state+"</td><td><input type='button' value='select' name='begin' onclick='selectTask("+i+")'></td><td><input type='button' name='end' value='end' onclick='endTask("+i+")'></td></tr>";
+    }
 }
 
 function iniciarTiempo() {
@@ -153,6 +161,10 @@ function mostrarTiempo() {
             } else if (sonar === true) {
                 sonar = false;
                 continuar = false;
+                if(tareaActiva!=null&&seccion == 1){
+                    alday[tareaActiva].realPeriods++;
+                    visualizarAlday();
+                }
                 botonesActivados(false, false, false);
                 botonesFunciones(false, false, false);
                 alarma(true);
@@ -171,7 +183,13 @@ function pararTiempo() {
 }
 
 function stopearTiempo() {
+    if(tareaActiva!=null&&continuar&&seccion == 1){
+        alday[tareaActiva].realPeriods++;
+        visualizarAlday();
+    }
     botonesFunciones(false, false, false);
+    botonesActivados(false, false, true);
+
     continuar = false;
     if (seccion == 1)
         minutos = pomodoro.pomodoro;
@@ -181,7 +199,6 @@ function stopearTiempo() {
         minutos = pomodoro.descanso;
     segundos = 0;
     visualizar();
-    botonesActivados(false, false, true);
 }
 
 function botonesActivados(play, pause, stop) {
@@ -212,4 +229,20 @@ function cambiar(nCambio) {
     cambiarMinutos();
     segundos = 0;
     visualizar();
+}
+
+function selectTask(posicion){
+    if(alday[posicion].state=="finished"){
+        alert("finished tasks cannot be done again")
+    }else{
+        alday[posicion].state="unfinish";
+        tareaActiva=posicion;
+        botonesActivados(false, true, true);
+    }
+    visualizarAlday();
+}
+function endTask(posicion){
+    alday[posicion].state="finished"
+    if(tareaActiva==posicion)tareaActiva=null;
+    visualizarAlday();
 }

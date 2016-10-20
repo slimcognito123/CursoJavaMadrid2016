@@ -92,8 +92,21 @@
             <input type="button" name="cancelar" value="Cancel" onclick="viewTasks(false)">
             <input type="button" name="aceptar" value="Accept" onclick="comprobarTask();">
         </div>
-        <article id="estoPaLasTareas">
-
+        <article >
+            <table>
+                <caption>Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>task</th>
+                        <th>estimated time</th>
+                        <th>real time</th>
+                        <th>state</th>
+                        <th colspan='2'>options</th>
+                    </tr>
+                </thead>
+                <tbody id="estoPaLasTareas">
+                </tbody>
+            </table>
         </article>
     </main>
 </body>
