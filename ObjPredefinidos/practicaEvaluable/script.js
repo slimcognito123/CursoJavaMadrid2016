@@ -207,7 +207,7 @@ function botonesActivados(play, pause, stop) {
     document.getElementsByName("stop")[0].disabled = stop;
 }
 
-function botonesFunciones(pomo, descanso, descansoLargo) {
+function botonesFunciones(pomo, descanso, descansoLargo,inter) {
     document.getElementsByName("pomodoreando")[0].disabled = pomo;
     document.getElementsByName("minidescanso")[0].disabled = descanso;
     document.getElementsByName("descansaco")[0].disabled = descansoLargo;
