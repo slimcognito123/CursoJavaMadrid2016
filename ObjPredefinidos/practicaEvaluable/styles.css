@@ -13,8 +13,8 @@ body{
 }
 #letrasPomodoro{
     position:relative;
-    top: 240px;
-    left: 480px;
+    top: 250px;
+    width:37%;
     animation: aparecer 4s linear;
     z-index: 2;
     font-size: 7.5em;
