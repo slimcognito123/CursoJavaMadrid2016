@@ -51,12 +51,46 @@
         </article>
         <div id="alarma">
             <figure>
-                <img src="images/alarma.gif" alt="alarma" width="300" height="300">
+                <img src="images/alarma.gif" alt="alarma" width="200" height="200">
                 <figcaption>
                     <h1>Ya es la hora!</h1></figcaption>
             </figure>
             <audio src="" autoloop loop></audio>
             <input type="button" name="parar" value="Stop alarm" onclick="alarma(false)">
+        </div>
+        <div id="settings">
+            <form>
+                Pomodoro:
+                <br>
+                <input type="number" name="pomodoroTime" min="1" value="" placeholder="" required="required">
+                <br> Short rest:
+                <br>
+                <input type="number" name="SRest" value="" min="1" placeholder="" required="required">
+                <br> Long rest:
+                <br>
+                <input type="number" name="LRest" value="" min="1" placeholder="" required="required">
+                <br> song:
+                <br>
+                <select name="song">
+                    <option value="music/GoForthAndDie.mp3">Go forth and die</option>
+                    <option value="music/nyanCat.mp3">nyan cat</option>
+                    <option value="music/DragonbornFusRoDah.mp3">Fus ro dah</option>
+                </select>
+                <br>
+                <input type="button" name="cancelar" value="Cancel" onclick="viewSettings(false)">
+                <input type="button" name="aceptar" value="Accept" onclick="comprobarSettings();">
+            </form>
+        </div>
+        <div id="tasks">
+            task:
+            <br>
+            <input type="text" name="task" placeholder="name of the task">
+            <br> periods:
+            <br>
+            <input type="number" name="numPomo" placeholder="number of pomodoros required">
+            <br>
+            <input type="button" name="cancelar" value="Cancel" onclick="viewTasks(false)">
+            <input type="button" name="aceptar" value="Accept" onclick="comprobarTask();">
         </div>
         <article id="estoPaLasTareas">
 

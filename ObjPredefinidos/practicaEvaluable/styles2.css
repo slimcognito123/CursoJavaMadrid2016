@@ -35,9 +35,43 @@ article>form>input{
     display: none;
     position: fixed;
     left:2%;
+    background: white;
     top: 10%;
     z-index: 3;
     width: 20%;
     height: auto;
     text-align: center;
+    border: 2px dashed tomato;
+    border-radius: 10px;
+}
+#settings{
+    display: none;
+    position: fixed;
+    left:25%;
+    background: white;
+    top: 10%;
+    z-index: 3;
+    width: 20%;
+    border-radius: 10px;
+    height: auto;
+    text-align: center;
+    border: 2px dashed tomato;
+}
+#tasks{
+    display: none;
+    position: fixed;
+    left:25%;
+    background: white;
+    top: 20%;
+    z-index: 3;
+    width: 50%;
+    height: auto;
+    font-size: 2em;
+    border: 2px dashed tomato;
+    border-radius: 10px;
+}
+#tasks>input{
+    font-size: 0.7em;
+    width: 70%;
+    margin: 2% 14%;
 }
