@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Pomodoro timer</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="stylesheet" type="text/css" href="styles2.css">
-		<script src="script.js" type="text/javascript"></script>
-	</head>
-	<body onload="main()">
-		<div id="presentacion">
-			<div>
-                <img id="tomateRodando" src="images/pomodoro.png" alt="tomateRodando">
-				<div id="letrasPomodoro">
-					Pomodoro
-				</div>
-			</div>
-			<input type="button" name="botonInicio" value="START">
-			<div id="explicacion">
-				<strong>What is pomodoro?</strong><br/>
-				The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.<br/> The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks.<br/> These intervals are named pomodoros, the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.<br/>The method is based on the idea that frequent breaks can improve mental agility.<br/>
 
-				Closely related to concepts such as timeboxing and iterative and incremental development used in software design, the method has been adopted in pair programming contexts.
-			</div>
-		</div>
-        <main>
-            <header>
-                <img src="images/pomodoro.png" alt="icono">
-				Pomodoro
-				<input type="button" name="settings" value="Settings">
-            </header>
-            <article>
-            	<form name="eleccionDeTiempo">
-	            	<input type="button" name="pomodoreando" value="Pomodoro time">
-	            	<input type="button" name="minidescanso" value="Short rest">
-	            	<input type="button" name="descansaco" value="Long rest">
-            	</form>
-            	<div id="muestraReloj">
-            		25:00
-            	</div>
-            	<form name="manejarTiempo">
-	            	<input type="button" name="play" value="Play">
-	            	<input type="button" name="pause" value="Pause">
-	            	<input type="button" name="stop" value="Stop">
-            	</form>
-            	<form >
-            		<input type="button" name="crearTarea" value="Create task">
-            	</form>
-            </article>
-            <article id="estoPaLasTareas">
+<head>
+    <title>Pomodoro timer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <script src="script.js" type="text/javascript"></script>
+</head>
 
-            </article>
-        </main>
-	</body>
+<body onload="main()">
+    <div id="presentacion">
+        <div>
+            <img id="tomateRodando" src="images/pomodoro.png" alt="tomateRodando">
+            <div id="letrasPomodoro">
+                Pomodoro
+            </div>
+        </div>
+        <input type="button" name="botonInicio" value="START">
+        <div id="explicacion">
+            <strong>What is pomodoro?</strong>
+            <br/> The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.
+            <br/> The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks.
+            <br/> These intervals are named pomodoros, the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.
+            <br/>The method is based on the idea that frequent breaks can improve mental agility.
+            <br/> Closely related to concepts such as timeboxing and iterative and incremental development used in software design, the method has been adopted in pair programming contexts.
+        </div>
+    </div>
+    <main>
+        <header>
+            <img src="images/pomodoro.png" alt="icono"> Pomodoro
+            <input type="button" name="settings" value="Settings">
+        </header>
+        <article>
+            <form name="eleccionDeTiempo">
+                <input type="button" name="pomodoreando" value="Pomodoro time">
+                <input type="button" name="minidescanso" value="Short rest">
+                <input type="button" name="descansaco" value="Long rest">
+            </form>
+            <div id="muestraReloj">
+                25:00
+            </div>
+            <form name="manejarTiempo">
+                <input type="button" name="play" value="Play">
+                <input type="button" name="pause" value="Pause">
+                <input type="button" name="stop" value="Stop">
+            </form>
+            <form>
+                <input type="button" name="crearTarea" value="Create task">
+            </form>
+        </article>
+        <div id="alarma">
+            <figure>
+                <img src="images/alarma.gif" alt="alarma" width="300" height="300">
+                <figcaption>
+                    <h1>Ya es la hora!</h1></figcaption>
+            </figure>
+            <audio src="" autoloop loop></audio>
+            <input type="button" name="parar" value="Stop alarm" onclick="alarma(false)">
+        </div>
+        <article id="estoPaLasTareas">
+
+        </article>
+    </main>
+</body>
+
 </html>

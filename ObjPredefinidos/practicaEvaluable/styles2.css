@@ -31,3 +31,13 @@ article>form>input{
 #muestraReloj{
     font-size: 7em;
 }
+#alarma{
+    display: none;
+    position: fixed;
+    left:2%;
+    top: 10%;
+    z-index: 3;
+    width: 20%;
+    height: auto;
+    text-align: center;
+}
