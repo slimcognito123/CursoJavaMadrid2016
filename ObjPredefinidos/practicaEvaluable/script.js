@@ -73,7 +73,6 @@ function viewInterr(activar) {
     if (activar) {
         document.getElementById("interruptions").style.display = "block";
         document.getElementsByName("interrutionsTasks")[0].innerHTML = "";
-        alert(alday[0].name);
         for (var i = 0; i < alday.length && alday.length > 0; i++) {
 
             if (i == tareaActiva) document.getElementsByName("interrutionsTasks")[0].innerHTML += '<option value="' + i + '" selected>' + alday[i].name + '</option>';
@@ -123,7 +122,6 @@ function comprobarTask() {
     } else {
         createTask();
         viewTasks(false);
-        alert(alday[alday.length - 1].name);
     }
 }
 
