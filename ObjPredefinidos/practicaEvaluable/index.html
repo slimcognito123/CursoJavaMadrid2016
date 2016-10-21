@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="styles2.css">
     <script src="script.js" type="text/javascript"></script>
+    <script src="scriptEE.js" type="text/javascript"></script>
 </head>
 
 <body onload="main()">
@@ -37,7 +38,7 @@
                 <input type="button" name="minidescanso" value="Short rest">
                 <input type="button" name="descansaco" value="Long rest">
             </form>
-            <div id="muestraReloj">
+            <div id="muestraReloj" onclick="cambiarFuente(this)">
                 25:00
             </div>
             <form name="manejarTiempo">
@@ -54,7 +55,7 @@
             <figure>
                 <img src="images/alarma.gif" alt="alarma" width="200" height="200">
                 <figcaption>
-                    <h1>Ya es la hora!</h1></figcaption>
+                    <h1>Time is over!</h1></figcaption>
             </figure>
             <audio src="" autoloop loop></audio>
             <input type="button" name="parar" value="Stop alarm" onclick="alarma(false)">
@@ -93,7 +94,23 @@
             <input type="button" name="cancelar" value="Cancel" onclick="viewTasks(false)">
             <input type="button" name="aceptar" value="Accept" onclick="comprobarTask();">
         </div>
-        <article >
+        <div id="interruptions">
+            <caption>Interruption records</caption>
+            title:
+            <br>
+            <input type="text" name="title" placeholder="why did you stopped">
+            <br> duration:
+            <br>
+            <input type="number" min="0" name="durm" placeholder="minutes you have stop">
+            <input type="number" name="durs" min="0" max="59" placeholder="seconds you have stop"><br>
+            task:
+            <br>
+            <input type="text" name="tsk" placeholder="during which task did you had the interruption?">
+            <br>
+            <input type="button" name="cancelar" value="Cancel" onclick="viewInterr(false)">
+            <input type="button" name="aceptar" value="Accept" onclick="comprobarInterr();">
+        </div>
+        <aside>
             <table>
                 <caption>Schedule</caption>
                 <thead>
@@ -108,6 +125,22 @@
                 <tbody id="estoPaLasTareas">
                 </tbody>
             </table>
+            <table>
+                <caption>Interruptions</caption>
+                <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>duration</th>
+                        <th>task</th>
+                        <th>moment recorded</th>
+                    </tr>
+                </thead>
+                <tbody id="estoPaInterrupciones">
+                </tbody>
+            </table>
+        </aside>
+        <article>
+
         </article>
     </main>
 </body>

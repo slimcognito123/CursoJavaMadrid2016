@@ -57,7 +57,7 @@ article>form>input{
     text-align: center;
     border: 2px dashed tomato;
 }
-#tasks{
+#tasks,#interruptions{
     display: none;
     position: fixed;
     left:25%;
@@ -70,11 +70,16 @@ article>form>input{
     border: 2px dashed tomato;
     border-radius: 10px;
 }
-#tasks>input{
+#tasks>input,#interruptions>input{
     font-size: 0.7em;
     width: 70%;
     margin: 2% 14%;
 }
+#interruptions>input[type="number"]{
+    width: 32.5%;
+    margin: 2% 2% 2% 1%;
+}
+
 table{
     font-size: 1.5em;
     margin-top: 100px;
