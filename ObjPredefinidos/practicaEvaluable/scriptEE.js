@@ -22,5 +22,9 @@ function cambiarFuente(div) {
             break;
     }
     cambiarFF++;
-    if(cambiarFF==6)cambiarFF=0;
+    if (cambiarFF == 6) cambiarFF = 0;
+}
+
+function cambiarMouse() {
+    document.body.style.cursor = "url(images/mouse.png)";
 }

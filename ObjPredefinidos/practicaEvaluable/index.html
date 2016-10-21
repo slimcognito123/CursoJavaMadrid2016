@@ -29,11 +29,11 @@
     </div>
     <main>
         <header>
-            <img src="images/pomodoro.png" alt="icono"> Pomodoro
+            <img src="images/pomodoro.png" alt="icono" ondblclick="cambiarMouse();"> Pomodoro
             <input type="button" name="settings" value="Settings">
         </header>
         <article>
-            <form name="eleccionDeTiempo">
+            <form name="eleccionDeTiempo" id="edt">
                 <input type="button" name="pomodoreando" value="Pomodoro time">
                 <input type="button" name="minidescanso" value="Short rest">
                 <input type="button" name="descansaco" value="Long rest">
@@ -41,7 +41,7 @@
             <div id="muestraReloj" onclick="cambiarFuente(this)">
                 25:00
             </div>
-            <form name="manejarTiempo">
+            <form name="manejarTiempo" id="mt">
                 <input type="button" name="play" value="Play">
                 <input type="button" name="pause" value="Pause">
                 <input type="button" name="stop" value="Stop">

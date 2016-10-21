@@ -104,3 +104,10 @@ tr{
 tr:nth-child(even){
     background-color: white;
 }
+#edt>input:first-child, #mt>input:first-child{
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: -5px 2px grey;
+}
+#edt>input:last-child,#mt>input:last-child{
+    border-radius: 0px 10px 10px 0px;
+}

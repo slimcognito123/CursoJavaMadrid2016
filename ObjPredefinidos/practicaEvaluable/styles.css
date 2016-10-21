@@ -4,6 +4,7 @@
 }
 body{
     background: linear-gradient(to left, #FFF, grey);
+    cursor: url(images/image.png)
 }
 #tomateRodando{
     position: absolute;
