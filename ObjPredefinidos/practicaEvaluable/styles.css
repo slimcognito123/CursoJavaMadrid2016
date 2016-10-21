@@ -4,7 +4,7 @@
 }
 body{
     background: linear-gradient(to left, #FFF, grey);
-    cursor: url(images/image.png)
+    cursor: url('images/mouse.png'),auto,default;
 }
 #tomateRodando{
     position: absolute;
@@ -22,6 +22,7 @@ body{
     text-shadow: -5px 2px grey;
     visibility: visible;
 }
+
 #presentacion>input{
     animation: aparecer 5s linear;
     position:absolute;
@@ -112,4 +113,30 @@ main{
 @font-face {
     font-family: SERAT KAYU;
     src: url(fonts/SERAT KAYU.ttf);
+}
+@keyframes volar{
+    0%{
+        display: block;
+        position: absolute;
+        top: 100px;
+        left:0px;
+    }
+    50%{
+        display: block;
+        position: absolute;
+        transform: rotate(180deg);
+        transition: transform 1s ease-out;
+        top:0%;
+        left: 50%;
+    }
+    99%{
+        position: absolute;
+        transform: rotate(360deg);
+        transition: transform 1s ease-out;
+        top: 100px;
+        left: 90%;
+    }
+    100%{
+        display: none;
+    }
 }

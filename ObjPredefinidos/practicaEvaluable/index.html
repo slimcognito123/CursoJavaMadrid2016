@@ -29,7 +29,7 @@
     </div>
     <main>
         <header>
-            <img src="images/pomodoro.png" alt="icono" ondblclick="cambiarMouse();"> Pomodoro
+            <img src="images/pomodoro.png" alt="icono" ondblclick="cambiarFondo();"> <spam ondblclick="tomateVolador()">Pomodoro</spam>
             <input type="button" name="settings" value="Settings">
         </header>
         <article>
@@ -96,33 +96,36 @@
         </div>
         <div id="interruptions">
             <caption>Interruption records</caption>
-            title:
+            <br> title:
             <br>
             <input type="text" name="title" placeholder="why did you stopped">
             <br> duration:
             <br>
             <input type="number" min="0" name="durm" placeholder="minutes you have stop">
-            <input type="number" name="durs" min="0" max="59" placeholder="seconds you have stop"><br>
-            task:
+            <input type="number" name="durs" min="0" max="59" placeholder="seconds you have stop">
+            <br> task:
             <br>
-            <input type="text" name="tsk" placeholder="during which task did you had the interruption?">
+            <select name="interrutionsTasks">
+
+            </select>
+            <!--<input type="text" name="tsk" placeholder="during which task did you had the interruption?">-->
             <br>
             <input type="button" name="cancelar" value="Cancel" onclick="viewInterr(false)">
             <input type="button" name="aceptar" value="Accept" onclick="comprobarInterr();">
         </div>
         <aside>
             <table>
-                <caption>Schedule</caption>
-                <thead>
-                    <tr>
-                        <th>task</th>
-                        <th>estimated time</th>
-                        <th>real time</th>
-                        <th>state</th>
-                        <th colspan='2'>options</th>
-                    </tr>
+                <caption>schedule</caption>
+                <tr>
+                    <th>task</th>
+                    <th>estimated time</th>
+                    <th>real time</th>
+                    <th>interrution time</th>
+                    <th>state</th>
+                    <th colspan="2">options</th>
+                </tr>
                 </thead>
-                <tbody id="estoPaLasTareas">
+                <tbody  id="estoPaLasTareas">
                 </tbody>
             </table>
             <table>
@@ -132,7 +135,6 @@
                         <th>title</th>
                         <th>duration</th>
                         <th>task</th>
-                        <th>moment recorded</th>
                     </tr>
                 </thead>
                 <tbody id="estoPaInterrupciones">
