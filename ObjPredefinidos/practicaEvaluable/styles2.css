@@ -92,12 +92,7 @@ th,td{
     width: 100px;
     padding: 2px 5px;
 }
-th[colspan="2"]{
-    width: 200px;
-    padding: 2px 10.5px;
-}
 tr{
-    display: block;
     width: 100%;
     background-color: tomato;
 }
@@ -117,3 +112,7 @@ input[name="settings"],input[name="crearTarea"]{
 #edt>input,#mt>input{
     box-shadow: -5px 2px grey;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> pene
