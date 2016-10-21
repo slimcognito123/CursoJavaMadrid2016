@@ -45,15 +45,22 @@ function entrarEnPagina() {
     document.getElementsByTagName("main")[0].style.display = "block";
 }
 
+function oscurecer(variedad){
+    if(variedad)document.getElementsByTagName("main")[0].style.opacity=0.3;
+    else document.getElementsByTagName("main")[0].style.opacity=1;
+}
+
 function viewSettings(activar) {
     if (activar) {
         document.getElementById("settings").style.display = "block";
         botonesActivados(true, true, true);
         botonesFunciones(true, true, true);
+        oscurecer(true);
     } else {
         document.getElementById("settings").style.display = "none";
         botonesActivados(true, false, false);
         botonesFunciones(false, false, false);
+        oscurecer(false);
     }
 }
 
@@ -62,10 +69,12 @@ function viewTasks(activar) {
         document.getElementById("tasks").style.display = "block";
         botonesActivados(true, true, true);
         botonesFunciones(true, true, true);
+        oscurecer(true);
     } else {
         document.getElementById("tasks").style.display = "none";
         botonesActivados(true, false, false);
         botonesFunciones(false, false, false);
+        oscurecer(false);
     }
 }
 
@@ -80,10 +89,12 @@ function viewInterr(activar) {
         }
         botonesActivados(true, true, true);
         botonesFunciones(true, true, true);
+        oscurecer(true);
     } else {
         document.getElementById("interruptions").style.display = "none";
         botonesActivados(true, false, false);
         botonesFunciones(false, false, false);
+        oscurecer(false);
     }
 }
 

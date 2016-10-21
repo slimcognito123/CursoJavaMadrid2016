@@ -1,10 +1,12 @@
 *{
     margin: 0 auto;
     padding: 0px;
+    cursor: url(images/raton1.gif),             url(http://falconmasters.com/img/cursor.gif),
+    auto;
 }
 body{
     background: linear-gradient(to left, #FFF, grey);
-    cursor: url('images/mouse.png'),auto,default;
+    cursor: URL('images/image.png'),auto,default;
 }
 #tomateRodando{
     position: absolute;
@@ -85,10 +87,11 @@ body{
     top: 460px;
     color:darkblue;
     animation: aparecer 5s linear;
-    font-size: 2.5em;
+    font-size: 1.5em;
     visibility: visible;
 }
 #explicacion strong{
+    font-size: 2.5em;
     color: red;
 }
 main{

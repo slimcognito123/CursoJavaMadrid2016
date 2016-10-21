@@ -20,7 +20,7 @@ header>input{
     border-radius: 3px;
     font-size: 0.3em;
 }
-main{
+main,#interruptions,#tasks,#settings{
     text-align: center;
 }
 article>form>input{
@@ -44,7 +44,7 @@ article>form>input{
     border: 2px dashed tomato;
     border-radius: 10px;
 }
-#settings{
+/*none{
     display: none;
     position: fixed;
     left:25%;
@@ -56,8 +56,8 @@ article>form>input{
     height: auto;
     text-align: center;
     border: 2px dashed tomato;
-}
-#tasks,#interruptions{
+}*/
+#tasks,#interruptions,#settings{
     display: none;
     position: fixed;
     left:25%;
@@ -70,10 +70,15 @@ article>form>input{
     border: 2px dashed tomato;
     border-radius: 10px;
 }
-#tasks>input,#interruptions>input{
+#tasks>input,#interruptions>input,#settings>form>input,#settings>form>select,#interruptions>select{
     font-size: 0.7em;
     width: 70%;
     margin: 2% 14%;
+}
+#tasks>input[type="button"],#interruptions>input[type="button"],#settings>form>input[type="button"]{
+    width: 30%;
+    display: inline-block;
+    margin: 2% 1%;
 }
 #interruptions>input[type="number"]{
     width: 32.5%;
@@ -112,7 +117,44 @@ input[name="settings"],input[name="crearTarea"]{
 #edt>input,#mt>input{
     box-shadow: -5px 2px grey;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> pene
+input[name="begin"],input[name="end"] {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5D7AB2), color-stop(1, #3679FB));
+	background:-moz-linear-gradient(top, #5D7AB2 5%, #3679FB 100%);
+	background:-webkit-linear-gradient(top, #5D7AB2 5%, #3679FB 100%);
+	background:-o-linear-gradient(top, #5D7AB2 5%, #3679FB 100%);
+	background:-ms-linear-gradient(top, #5D7AB2 5%, #3679FB 100%);
+	background:linear-gradient(to bottom, #5D7AB2 5%, #3679FB 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5D7AB2', endColorstr='#3679FB',GradientType=0);
+	background-color:#5D7AB2;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #3679FB;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5D7AB2;
+}
+input[name="begin"]:hover,input[name="end"]:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #5D7AB2));
+	background:-moz-linear-gradient(top, #3679FB 5%, #5D7AB2 100%);
+	background:-webkit-linear-gradient(top, #3679FB 5%, #5D7AB2 100%);
+	background:-o-linear-gradient(top, #3679FB 5%, #5D7AB2 100%);
+	background:-ms-linear-gradient(top, #3679FB 5%, #5D7AB2 100%);
+	background:linear-gradient(to bottom, #3679FB 5%, #5D7AB2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3679FB', endColorstr='#5D7AB2',GradientType=0);
+	background-color:#3679FB;
+}
+input[name="begin"]:active,input[name="end"]:active {
+	position:relative;
+	top:1px;
+}
