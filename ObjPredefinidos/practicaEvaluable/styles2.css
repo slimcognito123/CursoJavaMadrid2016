@@ -106,8 +106,14 @@ tr:nth-child(even){
 }
 #edt>input:first-child, #mt>input:first-child{
     border-radius: 10px 0px 0px 10px;
-    box-shadow: -5px 2px grey;
 }
 #edt>input:last-child,#mt>input:last-child{
     border-radius: 0px 10px 10px 0px;
+}
+input[name="settings"],input[name="crearTarea"]{
+    border-radius: 10px;
+    box-shadow: -5px 2px grey;
+}
+#edt>input,#mt>input{
+    box-shadow: -5px 2px grey;
 }
