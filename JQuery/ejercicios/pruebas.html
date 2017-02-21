@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("Text: " + $("#test").text());
+            });
+            $("#btn2").click(function () {
+                alert("HTML: " + $("#test").html());
+            });
+            $("#btn1").click(function () {
+                $("#test1").text("Hello world!");
+            });
+            $("#btn2").click(function () {
+                $("#test1").html("<b>Hello world!</b>");
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Dolly Duck");
+            });
+            $("button").click(function () {
+                $("#test4").attr("href", "https://www.google.es");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+<p id="test1">holiwis</p>
+<label for="test3">jelou doli</label><input type="text" id="test3"/>holiwis<br>
+<a id="test4">holiwis</a><br>
+<button id="btn1">Show Text/cosa1</button>
+<button id="btn2">Show HTML/cosa2</button>
+<button id="btn3">cosa3</button>
+<button id="btn4">cosa4</button>
+</body>
+</html>

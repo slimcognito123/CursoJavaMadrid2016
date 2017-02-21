@@ -1,0 +1,4 @@
+Practica pomodoro - easter eggs:
+haciendo doble click en el nombre aparecerá un tomate volando por la pagina.
+haciendo doble click en la imagen del tomate a la izquierda del logo, cambiará el fondo de la pagina.
+haciendo click en el timer 2 veces empezará a cambiar de fuente.
