@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+                $.get("http://rest-service.guides.spring.io/greeting", function(data){
+                    var text = "id:" + data.id;
+                    text +="content" +data.content
+                    $("#div1").html(text);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div1"></div><br>
+<button>Ajax!</button>
+</body>
