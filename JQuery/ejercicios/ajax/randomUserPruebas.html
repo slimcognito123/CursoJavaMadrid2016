@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script rel="script" src="../../js/jquery-3.1.1.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var cabooom = true;
+            $.ajax({
+                url: 'https://randomuser.me/api/?results=25',
+                dataType: 'json',
+                success: function (data) {
+                    for (var i in data.results) {
+                        var result = data.results[i];
+                        console.log(result.gender);
+                        var genero = "genero: " + result.gender + "<br/>";
+                        var namae = "nombre: " + result.name.first + " " + result.name.last + "<br/>";
+                        var emilio = "email: " + result.email + "<br/>";
+                        var celefono = "movil: " + result.cell + "<br/>";
+                        var foto = result.picture.medium;
+                        var nati = "nacionalidad: " + result.nat + "<br/>";
+                        $("#listaNombres").append("<li>" + namae + "<div style='display: none'><img src='" + foto + "'/>" + namae + celefono + genero + emilio + nati + "</div></li>");
+                    }
+                    $("li").click(function () {
+                        if (cabooom) {
+                            $(this).find("*").css({"display": "block"});
+                            $(this).siblings().fadeOut();
+                            cabooom = false;
+                        } else {
+                            $(this).siblings().fadeIn();
+                            $(this).find("*").css({"display": "none"});
+                            cabooom = true;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <title>RandomUsers</title>
+</head>
+<body>
+<ol id="listaNombres"></ol>
+</body>
+</html>
