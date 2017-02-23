@@ -9,29 +9,38 @@
 </head>
 <body>
     <div data-role="page" id="pageone">
-        <div data-role="header">
-            <h1>Welcome To My Homepage</h1>
-        </div>
-        <div data-role="main" class="ui-content">
-            <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
-            <a href="#pagetwo">Go to Page Two</a>
-        </div>
-        <div data-role="footer">
-            <h1>Footer Text</h1>
-        </div>
-    </div>
+ <div data-role="header">
+ <h1>Grouped Buttons</h1>
+ </div>
+ <div data-role="main" class="ui-content">
+ <div data-role="controlgroup" data-type="horizontal">
+ <p>Horizontal group:</p>
+ <a href="#pagetwo" class="ui-btn" data-transition="slide">Button 1</a>
+ <a href="#mypopup" class="ui-btn ui-icon-back ui-btn-icon-left">Button 2</a>
+ <a href="#" class="ui-btn">Button 3</a>
+ </div><br>
 
-    <div data-role="page" id="pagetwo">
-        <div data-role="header">
-            <h1>Welcome To My Homepage</h1>
-        </div>
-        <div data-role="main" class="ui-content">
-            <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
-            <a href="#pageone">Go to Page One</a>
-        </div>
-        <div data-role="footer">
-            <h1>Footer Text</h1>
+ <div data-role="controlgroup" data-type="vertical">
+ <p>Vertical group (default):</p>
+ <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left">Button 1</a>
+ <a href="#" class="ui-btn">Button 2</a>
+ <a href="#" class="ui-btn">Button 3</a>
+ </div>
+ </div>
+ <div data-role="footer">
+ <h1>Footer Text</h1>
+ </div>
+</div>
+
+   <div data-role="page" data-dialog="true" id="pagetwo">
+    <div data-role="main" class="ui-content">
+        <a  data-rel="back"  class="ui-btn ui-icon-back ui-btn-icon-left" data-transition="slide">Go to Page One</a>
         </div>
     </div>
+    <div data-role="main" class="ui-content">
+ <div data-role="popup" id="myPopup">
+ <p>This is a simple popup.</p>
+ </div>
+ </div>
 </body>
 </html>
